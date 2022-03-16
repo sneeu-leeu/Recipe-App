@@ -7,7 +7,7 @@ class RecipeFoodsController < ApplicationController
   def create
     @recipe = Recipe.find(params[:recipe_id])
     @recipe_food = @recipe.recipe_foods.create(recipe_foods_params)
-    if @recipe_food save
+    if @recipe_food.save
       flash[:notice] = 'Food Created Successfully'
     else
       render :new
@@ -35,7 +35,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   private
-  
+
   def update_params
     params.require(:recipe_food).permit(:quantity, :food_id)
   end
