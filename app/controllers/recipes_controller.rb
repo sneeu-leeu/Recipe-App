@@ -30,7 +30,6 @@ class RecipesController < ApplicationController
     redirect_to recipes_url
   end
 
-
   private
 
   def recipe_params
