@@ -32,13 +32,13 @@
     <tbody>
       <% @recipe.recipe_foods.each do |recipe_food| %>
         <tr>
-          <td> <%= recipe_food.name %> </td>
-          <td> <%= recipe_food.quantitiy %> </td>
-          <td> <%= recipe_food.value %> </td>
+          <td><%= recipe_food.food.name%></th>
+          <td><%= recipe_food.quantity%><%= recipe_food.food.measurementUnit  %></td>
+          <td><%= recipe_food.quantity %> <%= recipe_food.food.price %></td>
           <td>
             <div>
-              <%= link_to 'Modify', recipe_foods_path(recipe_id: @recipe.id, id: recipe_food.id), class:'button-class' %>
-              <%= link_to 'Remove', recipe_foods_path(), class:'button-class' %>
+              <%= link_to 'Modify', recipe_recipe_foods_path(recipe_id: @recipe.id, id: recipe_food.id), class:'button-class' %>
+              <%= link_to 'Remove', edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), class:'button-class' %>
             </div>
           </td>
         </tr>
