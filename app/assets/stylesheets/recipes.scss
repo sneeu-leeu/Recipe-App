@@ -1,3 +1,67 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.button-class {
+  background-color: rgba(21, 255, 0, 0.89);
+  border: 1px solid rgba(21, 255, 0, 0.89);
+  border-radius: 10px;
+  padding: 8px;
+  color: rgba(192, 10, 46, 0.877);
+}
+
+.remove-button-class {
+  background-color: rgba(192, 10, 46, 0.877);
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  color: rgb(199, 245, 245);
+}
+
+.recipes-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 150px;
+}
+
+.create-div {
+  align-self: flex-end;
+  margin-bottom: 15px;
+}
+
+.create-div > * {
+  text-decoration: none;
+}
+
+.recipe-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border: 1px solid #000;
+  padding: 40px;
+}
+
+.recipe-list-header {
+  margin: 5px 40px;
+  width: 30%;
+}
+
+.recipe-list-header h1 > * {
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+.recipe-list-description {
+  width: 60%;
+}
+
+.list-div {
+  width: 100%;
+}
