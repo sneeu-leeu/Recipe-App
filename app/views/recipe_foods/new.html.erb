@@ -1,0 +1,6 @@
+<main class="recipes-container">
+  <h1>New Ingredient</h1>
+  <p>Enter Following Fields to Add New Ingredient</p>
+  <%= render 'recipe_food_form', recipe_food: @recipe_food %>
+  <%= link_to 'Cancel', recipe_recipe_food_path, class:'cancel-button' %>
+</main>
