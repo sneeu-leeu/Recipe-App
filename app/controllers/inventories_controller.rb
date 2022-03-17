@@ -3,8 +3,7 @@ class InventoriesController < ApplicationController
     @inventories = Inventory.where(user_id: current_user.id)
   end
 
-  def new
-  end
+  def new; end
 
   def show
     @inventory = Inventory.find(params[:id])
