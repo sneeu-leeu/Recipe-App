@@ -10,19 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_14_195507) do
+ActiveRecord::Schema.define(version: 2022_03_17_125156) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
-    t.string "measurement_unit"
+    t.string "measurementUnit"
     t.decimal "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_foods_on_user_id"
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_inventories_on_user_id"
+  end
+
+  create_table "inventory_foods", force: :cascade do |t|
+    t.integer "quantitiy"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "food_id", null: false
+    t.bigint "inventory_id", null: false
+    t.index ["food_id"], name: "index_inventory_foods_on_food_id"
+    t.index ["inventory_id"], name: "index_inventory_foods_on_inventory_id"
   end
 
   create_table "recipe_foods", force: :cascade do |t|
@@ -37,8 +55,8 @@ ActiveRecord::Schema.define(version: 2022_03_14_195507) do
 
   create_table "recipes", force: :cascade do |t|
     t.string "name"
-    t.decimal "preparation_time"
-    t.decimal "cooking_time"
+    t.decimal "preparationTime"
+    t.decimal "cookingTime"
     t.text "description"
     t.boolean "public", default: false
     t.datetime "created_at", precision: 6, null: false
@@ -51,6 +69,7 @@ ActiveRecord::Schema.define(version: 2022_03_14_195507) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "role", default: "default", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -61,6 +80,9 @@ ActiveRecord::Schema.define(version: 2022_03_14_195507) do
   end
 
   add_foreign_key "foods", "users"
+  add_foreign_key "inventories", "users"
+  add_foreign_key "inventory_foods", "foods"
+  add_foreign_key "inventory_foods", "inventories"
   add_foreign_key "recipe_foods", "foods"
   add_foreign_key "recipe_foods", "recipes"
   add_foreign_key "recipes", "users"
