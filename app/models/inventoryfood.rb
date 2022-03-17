@@ -1,0 +1,2 @@
+class Inventoryfood < ApplicationRecord
+end
