@@ -14,7 +14,7 @@
  *= require_self
  */
 
-.heading {
+ .heading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,4 +36,13 @@
   float: right;
   justify-content: flex-end;
   margin: 10px 10%;
+}
+
+.shopping {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.shoptr {
+  align-items: center;
 }
