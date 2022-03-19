@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   after_create :set_role
-  
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -14,13 +14,5 @@ class User < ApplicationRecord
 
   def set_role
     update(role: 'user')
-  end
-
-  def admin?
-    false
-  end
-
-  def sign_out
-    sign_out_and_redirect(current_user)
   end
 end
