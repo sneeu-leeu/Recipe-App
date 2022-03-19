@@ -989,9 +989,9 @@
   resolved "https://registry.npmjs.org/@rails/ujs/-/ujs-6.1.5.tgz"
   integrity sha512-Ir4yd2fdDldWIghavPr874copVKf6OOoecKHZiFRlPtm38tFvhyxr+ywzNieXGwolF9JQe3D5GrM8ejkzUgh5Q==
 
-"@rails/webpacker@5.4.3":
+"@rails/webpacker@^5.4.3":
   version "5.4.3"
-  resolved "https://registry.npmjs.org/@rails/webpacker/-/webpacker-5.4.3.tgz"
+  resolved "https://registry.yarnpkg.com/@rails/webpacker/-/webpacker-5.4.3.tgz#cfe2d8faffe7db5001bad50a1534408b4f2efb2f"
   integrity sha512-tEM8tpUtfx6FxKwcuQ9+v6pzgqM5LeAdhT6IJ4Te3BPKFO1xrGrXugqeRuZ+gE8ASDZRTOK6yuQkapOpuX5JdA==
   dependencies:
     "@babel/core" "^7.15.0"
