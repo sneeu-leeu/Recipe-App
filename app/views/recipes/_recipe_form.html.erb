@@ -1,25 +1,14 @@
 <%= form_with(model: recipe, url: recipes_path) do |form| %>
-  <div class="form-element">
-    <%= form.label :name, "Recipe Name:" %>
-    <%= form.text_field :name, placeholder: 'Name of the Recipe', class:"form-text" %>
+  <%= form.text_field :name, placeholder: 'Name', id:"name", class:"form-control" %>
+  <br>
+  <%= form.text_field :cookingTime, placeholder: 'Cooking time', id:"cookingTime", class:"form-control" %>
+  <br>
+  <%= form.text_field :preparationTime, placeholder: 'Preparation time', id:"preparationTime",class:"form-control" %>
+  <br>
+  <%= form.text_area :description, placeholder: 'Description', id:"description", class:"form-control" %>
+  <br>
+  <div class="actions">
+    <%= form.submit class: 'btn btn-success' %>
   </div>
   <br>
-  <div class="form-element">
-    <%= form.label :cookingTime, "Cooking Time:"%>
-    <%= form.text_field :cookingTime, placeholder: 'Cooking Time of the Recipe', class:"form-text" %>
-  </div>
-  <br>
-  <div class="form-element">
-    <%= form.label :preparationTime, "Prepation Time:" %>
-    <%= form.text_field :preparationTime, placeholder: 'Prepation Time of the Recipe', class:"form-text" %>
-  </div>
-  <br>
-  <div class="form-element">
-    <%= form.label :description, "Description:" %>
-    <%= form.text_area :description, placeholder: 'Description of the Recipe', class:'form-text-area' %>
-  </div>
-  <br>
-  <div class="form-element">
-    <%= form.submit "Submit New Recipe", class:'button-class'%>
-  </div>
 <% end %>

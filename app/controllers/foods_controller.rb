@@ -20,6 +20,7 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = Food.find(params[:id])
+    authorize! :destroy, @food
     @food.destroy
     flash[:notice] = if @food.destroy
                        'Food is removed successfully'
