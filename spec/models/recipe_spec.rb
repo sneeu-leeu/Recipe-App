@@ -36,7 +36,7 @@ RSpec.describe Recipe, type: :model do
       recipe.description = 'test' * 12
       expect(recipe).to be_valid
     end
-    
+
     it 'should validate the description' do
       recipe.description = 'test' * 260
       expect(recipe).to_not be_valid

@@ -13,7 +13,7 @@ RSpec.describe RecipeFood, type: :model do
     context 'when valid' do
       it { expect(recipe_food).to be_valid }
     end
-    
+
     it 'should allow valid quantity' do
       recipe_food.quantity = 3
       expect(recipe_food).to be_valid
